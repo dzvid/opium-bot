@@ -1,0 +1,9 @@
+{
+  "name": "ocio-bot",
+  "version": "0.0.1",
+  "description": "Simple bot to post \"'x-word' é o ócio da humanidade.\", where x-word is a random word.",
+  "main": "index.js",
+  "repository": "git@github.com:tukno/ocio-bot.git",
+  "author": "tukno <oliveiradavid007@gmail.com>",
+  "license": "MIT"
+}
