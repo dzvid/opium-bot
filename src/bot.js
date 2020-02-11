@@ -86,7 +86,7 @@ class Bot {
       return undefined;
     }
 
-    const message = `${this.capitalize(word)} is the opium of mankind.`;
+    const message = `${this.capitalize(word)} is the opium of the people.`;
 
     // Check for offensive words
     if (wordfilter.blacklisted(message)) {
