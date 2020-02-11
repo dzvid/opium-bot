@@ -92,16 +92,11 @@ class Bot {
   // Mount the phrase
   // Check if it has offensive words
   mountMessage(word) {
-    if (typeof word === undefined) {
+    if (typeof word === undefined || wordfilter.blacklisted(word)) {
       return undefined;
     }
 
     const message = this.checkPluralSingularMessage(word);
-
-    // Check for offensive words
-    if (wordfilter.blacklisted(message)) {
-      return undefined;
-    }
 
     return message;
   }
