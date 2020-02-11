@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import Twit from 'twit';
+import pluralize from 'pluralize';
 
 import api from './services/api';
 import botConfig from './config/twitter';
@@ -9,7 +10,7 @@ class Bot {
   constructor() {
     this.twitterApi = new Twit(botConfig);
 
-    this.INTERVAL_MINUTES = 20;
+    this.INTERVAL_MINUTES = 0.5;
   }
 
   // Initiates the bot and set the cyclical sending of tweets
@@ -79,6 +80,15 @@ class Bot {
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
+  // Checks if the word is plural or singular, and returns a message according to the word.
+  checkPluralSingularMessage(word) {
+    if (pluralize.isPlural(word)) {
+      return `${this.capitalize(word)} are the opium of the people.`;
+    }
+
+    return `${this.capitalize(word)} is the opium of the people.`;
+  }
+
   // Mount the phrase
   // Check if it has offensive words
   mountMessage(word) {
@@ -86,7 +96,7 @@ class Bot {
       return undefined;
     }
 
-    const message = `${this.capitalize(word)} is the opium of the people.`;
+    const message = this.checkPluralSingularMessage(word);
 
     // Check for offensive words
     if (wordfilter.blacklisted(message)) {
