@@ -10,7 +10,7 @@ class Bot {
   constructor() {
     this.twitterApi = new Twit(botConfig);
 
-    this.INTERVAL_MINUTES = 0.5;
+    this.INTERVAL_MINUTES = process.env.INTERVAL_MINUTES;
   }
 
   // Initiates the bot and set the cyclical sending of tweets
