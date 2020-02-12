@@ -140,7 +140,7 @@ I will assume you are using a Linux distribution.
    cp .env.example .env
    ```
 
-   the .env file has the following properties that needs to be set (use the text editor of your choice):
+   the .env file has the following properties that needs to be set (use a text editor of your choice):
 
    - The Twitter consumer keys and access tokens you got at https://developer.twitter.com/apps
    - The time interval between tweets in minutes(default is 20 minutes)
