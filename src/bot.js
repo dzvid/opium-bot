@@ -17,6 +17,8 @@ class Bot {
   init() {
     console.log('Bot started....');
 
+    this.processTweet();
+
     setInterval(
       this.processTweet.bind(this),
       this.INTERVAL_MINUTES * 60 * 1000
