@@ -27,7 +27,7 @@
     "wordfilter": "^0.2.6"
   },
   "scripts": {
-    "start": "node ./build/index.js",
+    "start": "npm run build && node ./build/index.js",
     "build": "npm run clean && npm run build-babel",
     "dev": "babel-node src/index.js",
     "clean": "rm -rf build && mkdir build",
